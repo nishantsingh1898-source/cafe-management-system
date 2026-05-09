@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cafe Management System</title>
+
+    <style>
+
+        body{
+            background:#f2f2f2;
+            font-family:Arial;
+        }
+
+        .box{
+            background:white;
+            width:300px;
+            padding:20px;
+            margin:auto;
+            margin-top:100px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:black;
+            color:white;
+            padding:10px;
+            border:none;
+            width:100%;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🍔 Cafe Management</h1>
+
+    <label>Burger ₹120</label>
+    <input type="number" id="burger" value="0">
+
+    <label>Pizza ₹250</label>
+    <input type="number" id="pizza" value="0">
+
+    <label>Coffee ₹80</label>
+    <input type="number" id="coffee" value="0">
+
+    <button onclick="bill()">Generate Bill</button>
+
+    <h2 id="total">Total Bill: ₹0</h2>
+
+</div>
+
+<script>
+
+function bill(){
+
+    let burger = document.getElementById("burger").value;
+
+    let pizza = document.getElementById("pizza").value;
+
+    let coffee = document.getElementById("coffee").value;
+
+    let total =
+    (burger * 120) +
+    (pizza * 250) +
+    (coffee * 80);
+
+    document.getElementById("total").innerHTML =
+    "Total Bill: ₹" + total;
+}
+
+</script>
+
+</body>
+</html>
